@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "lib":["es2016", "dom", "esnext"],
+    "types": [
+      "node",
+      "jest"
+    ],
+    "paths": {
+      "@/packages/*": [
+        "packages/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

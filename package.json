@@ -34,7 +34,8 @@
     },
     "testMatch": [
       "**/__tests__/*.+(ts|tsx|js)",
-      "**/?(*.)+(spec|test).(ts|tsx|js)?(x)"
+      "**/?(*.)+(spec|test).(ts|tsx|js)?(x)",
+      "<rootDir>/(tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx))"
     ]
   },
   "devDependencies": {
@@ -62,6 +63,7 @@
     "vue-template-compiler": "^2.5.16"
   },
   "dependencies": {
+    "@types/node": "^10.3.1",
     "css-loader": "^0.28.11",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.2",

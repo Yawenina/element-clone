@@ -14,7 +14,7 @@ module.exports = {
     chunkFilename: '[name].chunk.js'
   },
   resolve: {
-    extensions: ['.js', '.vue'],
+    extensions: ['.js', '.vue', '.ts', '.tsx'],
     alias: {
       '@/packages': path.resolve(__dirname, '../packages'),
       vue: 'vue/dist/vue.esm.js'

@@ -1,10 +1,11 @@
 import Vue from 'vue';
 import { shallowMount } from "@vue/test-utils";
 import Row from '../../packages/row/index';
+import { VueClass } from "../../decorators/declarations";
 
 
 describe('Row.vue', () => {
-  let RowComponent;
+  let RowComponent: VueClass<Vue>;
 
   beforeEach(() => {
     RowComponent = Vue.component(Row.name, Row);

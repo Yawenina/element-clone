@@ -1,14 +1,16 @@
-import Vue, { ComponentOptions } from 'vue';
+import Vue, { CreateElement } from 'vue';
+import Component from '../../decorators/index';
 
-const Row: ComponentOptions<never, {}, {}, {}, {}> = {
+@Component({
   name: 'ElRow',
   props: {
     tag: {
       type: String,
       default: 'div'
     },
-    gutter: Number,
-    type: String,
+    type: {
+      type: String,
+    },
     justify: {
       type: String,
       default: 'start'
@@ -17,28 +19,31 @@ const Row: ComponentOptions<never, {}, {}, {}, {}> = {
       type: String,
       default: 'top'
     },
-  },
-  computed: {
-    style() {
-      const ret = {};
-      if (this.gutter) {
-        ret.marginLeft = `-${this.gutter / 2}px`;
-        ret.marginRight = ret.marginLeft;
-      }
-      return ret;
+    gutter: {
+      type: Number,
+      default: 0,
     }
-  },
-  render(h) {
+  }
+})
+export default class Row extends Vue {
+  get style() {
+    const ret: any = {};
+    if (this.gutter) {
+      ret.marginLeft = `-${this.gutter/2}px`;
+      ret.marginRight = `-${this.gutter/2}px`;
+    }
+    return ret;
+  }
+
+  render(h: CreateElement) {
     return h(this.tag, {
       class: [
         'el-row',
-        this.type === 'flex' ? 'el-row--flex' : '',
+        this.type && 'el-row--flex',
         this.justify && `is-justify-${this.justify}`,
         this.align && `is-align-${this.align}`,
       ],
-      style: this.style
-    });
-  },
-};
-
-export default Row;
+      style: this.style,
+    })
+  }
+}

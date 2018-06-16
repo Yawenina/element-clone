@@ -21,7 +21,7 @@ const components = [
 ];
 const install = Vue => {
   components.forEach(Component => {
-    Vue.use(Component);
+    Vue.component(Component.name, Component);
   })
 };
 
@@ -46,10 +46,14 @@ export default {
 }
 
 function buildExampleEntry() {
-  const examples = Examples.map(name => `{
-    path: '/${name}',
-    component: (resolve) => require('./${name}', resolve)
-  }`);
+  const examples = Examples.map(name => {
+    const filename = path.basename(name, '.vue');
+    return `
+    {
+      path: '/${filename}',
+      component: (resolve) => require(['./components/${name}'], resolve)
+    }`
+  });
   const content = `
 import VueRouter from 'vue-router';
 const routes = [${examples}];

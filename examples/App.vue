@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
-    <h1>Element Clone</h1>
-    <nav>
+  <div class="example">
+    <aside>
+      <nav>
         <ul>
           <li><router-link to="/layout">Layout</router-link></li>
-          <li><router-link to="/affix">Affix</router-link></li>
+          <li><router-link to="/container">Container</router-link></li>
           <li><router-link to="/grid">Grid</router-link></li>
           <li><router-link to="/button">Button</router-link></li>
           <li><router-link to="/input">Input</router-link></li>
@@ -51,7 +51,10 @@
           <li><router-link to="/scroll">Scroll</router-link></li>
         </ul>
       </nav>
-    <router-view></router-view>
+    </aside>
+    <main>
+      <router-view></router-view>
+    </main>
   </div>
 </template>
 
@@ -61,13 +64,50 @@
   }
 </script>
 
-<style lang="scss" scoped>
-  nav {
-    margin-bottom: 40px;
-    ul { display: flex; flex-wrap: wrap; }
-    li { display: inline-block; }
-    li + li { border-left: solid 1px #bbb; padding-left: 10px; margin-left: 10px; }
+<style lang="scss">
+  /*nav {*/
+    /*margin-bottom: 40px;*/
+    /*ul { display: flex; flex-wrap: wrap; }*/
+    /*li { display: inline-block; }*/
+    /*li + li { border-left: solid 1px #bbb; padding-left: 10px; margin-left: 10px; }*/
+  /*}*/
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   }
-  .container{ padding: 10px 40px 0; }
-  .v-link-active { color: #bbb; }
+
+  .example {
+    display: flex;
+    aside {
+      width: 250px;
+      margin-right: 20px;
+      background: #F5F7FB;
+      ul {
+        padding: 0 15px;
+      }
+      li {
+        list-style: none;
+        a {
+          display: block;
+          background: none;
+          border: 0;
+          padding: .5rem 1rem;
+          border-radius: 3px;
+          color: #495057;
+          text-decoration: none;
+          &.router-link-active {
+            z-index: 2;
+            color: #467fcf;
+            background: rgba(70, 127, 207, 0.06);
+            font-weight: 600;
+          }
+        }
+      }
+    }
+    main {
+      flex: 1;
+    }
+  }
+
 </style>

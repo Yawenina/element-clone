@@ -4,6 +4,8 @@ import Element from '../packages';
 import router from './router';
 import App from './App';
 import '@/packages/theme-chalk/src/index.scss';
+import './main.scss';
+
 Vue.use(VueRouter);
 Vue.use(Element);
 

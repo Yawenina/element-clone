@@ -1,8 +1,11 @@
 import Vue, { CreateElement } from 'vue';
 import Component from '../../decorators/index';
+// import { Component } from "vue-property-decorator";
+// import Component from "vue-class-component";
 
 @Component({
   name: 'ElRow',
+  componentName: 'ElRow',
   props: {
     tag: {
       type: String,
@@ -25,7 +28,8 @@ import Component from '../../decorators/index';
     }
   }
 })
-export default class Row extends Vue {
+
+export default class ElRow extends Vue {
   get style() {
     const ret: any = {};
     if (this.gutter) {
@@ -44,6 +48,6 @@ export default class Row extends Vue {
         this.align && `is-align-${this.align}`,
       ],
       style: this.style,
-    })
+    }, this.$slots.default)
   }
 }

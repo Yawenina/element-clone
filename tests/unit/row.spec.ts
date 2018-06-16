@@ -61,4 +61,13 @@ describe('Row.vue', () => {
     });
     expect(wrapper.classes().includes('is-align-bottom')).toBe(true);
   });
+
+  test('should render slot', function() {
+    const wrapper = shallowMount(RowComponent, {
+      slots: {
+        default: `<h1>Row</h1>`
+      }
+    });
+    expect(wrapper.find('h1').text()).toBe('Row');
+  });
 });

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --watchAll",
     "build:file": "node build/bin/build-entry.js",
-    "dev": "npm run build:file && webpack-serve --config build/webpack.dev.js"
+    "dev": "npm run build:file && webpack-serve --config build/webpack.dev.js --open"
   },
   "keywords": [],
   "author": "",

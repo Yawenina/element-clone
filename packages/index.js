@@ -15,16 +15,21 @@
   import Header from './header';
   
 
+  import Icon from './icon';
+  
+
+  import Main from './main';
+  
+
   import Row from './row';
   
 
 const version = '1.0.0';
 const components = [
-  Aside,Col,Container,Footer,Header,Row
+  Aside,Col,Container,Footer,Header,Icon,Main,Row
 ];
 const install = Vue => {
   components.forEach(Component => {
-    console.log(Component);
     Vue.component(Component.name, Component);
   })
 };
@@ -42,6 +47,8 @@ Col,
 Container,
 Footer,
 Header,
+Icon,
+Main,
 Row
 }
 

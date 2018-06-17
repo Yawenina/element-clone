@@ -6,13 +6,13 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
-@Component
-export default class Aside extends Vue {
+@Component({
+  name: 'ElAside',
+  componentName: 'ElContainer'
+})
+export default class ElAside extends Vue {
   @Prop({ default: '300px' })
   width?: string;
-
-  name: string = 'ElAside';
-  componentName: string = 'ElAside';
 }
 </script>
 

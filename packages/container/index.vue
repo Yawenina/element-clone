@@ -6,11 +6,11 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
-@Component
-export default class Container extends Vue {
-  name: string = 'ElContainer';
-  componentName: string = 'ElContainer';
-
+@Component({
+  name: 'ElContainer',
+  componentName: 'ElContainer'
+})
+export default class ElContainer extends Vue {
   @Prop()
   direction?: string;
 

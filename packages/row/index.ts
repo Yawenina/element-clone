@@ -1,35 +1,23 @@
 import Vue, { CreateElement } from 'vue';
-import Component from '../../decorators/index';
-// import { Component } from "vue-property-decorator";
-// import Component from "vue-class-component";
+// import Component from '../../decorators/index';
+import { Component, Prop } from "vue-property-decorator";
 
 @Component({
   name: 'ElRow',
-  componentName: 'ElRow',
-  props: {
-    tag: {
-      type: String,
-      default: 'div'
-    },
-    type: {
-      type: String,
-    },
-    justify: {
-      type: String,
-      default: 'start'
-    },
-    align: {
-      type: String,
-      default: 'top'
-    },
-    gutter: {
-      type: Number,
-      default: 0,
-    }
-  }
+  componentName: 'ElRow'
 })
-
 export default class ElRow extends Vue {
+  @Prop({ default: 'div' })
+  tag?: string;
+  @Prop()
+  type?: string;
+  @Prop({ default: 'start' })
+  justify?: string;
+  @Prop({ default: 'top' })
+  align?: string;
+  @Prop({ default: 0 })
+  gutter?: number;
+
   get style() {
     const ret: any = {};
     if (this.gutter) {
@@ -51,3 +39,4 @@ export default class ElRow extends Vue {
     }, this.$slots.default)
   }
 }
+

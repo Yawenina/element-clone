@@ -1,11 +1,11 @@
 <template>
   <div class="example">
-    <aside>
+    <aside class="example__aside">
       <nav>
         <ul>
           <li><router-link to="/layout">Layout</router-link></li>
           <li><router-link to="/container">Container</router-link></li>
-          <li><router-link to="/grid">Grid</router-link></li>
+          <li><router-link to="/icon">Icon</router-link></li>
           <li><router-link to="/button">Button</router-link></li>
           <li><router-link to="/input">Input</router-link></li>
           <li><router-link to="/radio">Radio</router-link></li>
@@ -79,7 +79,7 @@
 
   .example {
     display: flex;
-    aside {
+    &__aside {
       width: 250px;
       margin-right: 20px;
       background: #F5F7FB;

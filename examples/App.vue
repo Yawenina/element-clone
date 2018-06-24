@@ -81,7 +81,6 @@
     display: flex;
     &__aside {
       width: 250px;
-      margin-right: 20px;
       background: #F5F7FB;
       ul {
         padding: 0 15px;
@@ -107,6 +106,7 @@
     }
     main {
       flex: 1;
+      padding: 0 20px;
     }
   }
 

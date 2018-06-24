@@ -32,8 +32,8 @@ export default class ElRow extends Vue {
       class: [
         'el-row',
         this.type && 'el-row--flex',
-        this.justify && `is-justify-${this.justify}`,
-        this.align && `is-align-${this.align}`,
+        this.justify !== 'start' ? `is-justify-${this.justify}` : '',
+        this.align !== 'top' ? `is-align-${this.align}` : '',
       ],
       style: this.style,
     }, this.$slots.default)

@@ -3,6 +3,12 @@
   import Aside from './aside';
   
 
+  import Button from './button';
+  
+
+  import ButtonGroup from './button-group';
+  
+
   import Col from './col';
   
 
@@ -21,12 +27,15 @@
   import Main from './main';
   
 
+  import Radio from './radio';
+  
+
   import Row from './row';
   
 
 const version = '1.0.0';
 const components = [
-  Aside,Col,Container,Footer,Header,Icon,Main,Row
+  Aside,Button,ButtonGroup,Col,Container,Footer,Header,Icon,Main,Radio,Row
 ];
 const install = Vue => {
   components.forEach(Component => {
@@ -43,12 +52,15 @@ export {
   install,
   version,
   Aside,
+Button,
+ButtonGroup,
 Col,
 Container,
 Footer,
 Header,
 Icon,
 Main,
+Radio,
 Row
 }
 

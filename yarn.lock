@@ -501,7 +501,7 @@ array-filter@~0.0.0:
 
 array-find-index@^1.0.1:
   version "1.0.2"
-  resolved "https://registry.yarnpkg.com/array-find-index/-/array-find-index-1.0.2.tgz#df010aa1287e164bbda6f9723b0a96a1ec4187a1"
+  resolved "https://registry.yarnpkg.com/array-find-index.vue/-/array-find-index.vue-1.0.2.tgz#df010aa1287e164bbda6f9723b0a96a1ec4187a1"
 
 array-map@~0.0.0:
   version "0.0.0"
@@ -2010,7 +2010,7 @@ currently-unhandled@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/currently-unhandled/-/currently-unhandled-0.4.1.tgz#988df33feab191ef799a61369dd76c17adf957ea"
   dependencies:
-    array-find-index "^1.0.1"
+    array-find-index.vue "^1.0.1"
 
 cyclist@~0.2.2:
   version "0.2.2"
@@ -2629,7 +2629,7 @@ find-cache-dir@^1.0.0:
 
 find-index@^0.1.1:
   version "0.1.1"
-  resolved "https://registry.yarnpkg.com/find-index/-/find-index-0.1.1.tgz#675d358b2ca3892d795a1ab47232f8b6e2e0dde4"
+  resolved "https://registry.yarnpkg.com/find-index.vue/-/find-index.vue-0.1.1.tgz#675d358b2ca3892d795a1ab47232f8b6e2e0dde4"
 
 find-up@^1.0.0:
   version "1.1.2"
@@ -2842,7 +2842,7 @@ glob2base@^0.0.12:
   version "0.0.12"
   resolved "https://registry.yarnpkg.com/glob2base/-/glob2base-0.0.12.tgz#9d419b3e28f12e83a362164a277055922c9c0d56"
   dependencies:
-    find-index "^0.1.1"
+    find-index.vue "^0.1.1"
 
 glob@^6.0.4:
   version "6.0.4"

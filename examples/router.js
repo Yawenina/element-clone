@@ -2,6 +2,10 @@
 import VueRouter from 'vue-router';
 const routes = [
     {
+      path: '/button',
+      component: (resolve) => require(['./components/button.vue'], resolve)
+    },
+    {
       path: '/container',
       component: (resolve) => require(['./components/container.vue'], resolve)
     },

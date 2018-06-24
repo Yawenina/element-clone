@@ -6,13 +6,13 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
-@Component
+@Component({
+  name: 'ElHeader',
+  componentName: 'ElHeader',
+})
 export default class ElHeader extends Vue {
   @Prop({ default: '60px' })
   height?: string;
-
-  name: string = 'ElHeader';
-  componentName: string = 'ElHeader';
 }
 </script>
 

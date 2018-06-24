@@ -53,13 +53,12 @@ export default class ElCol extends Vue {
       this.pull && `el-col-pull-${this.pull}`,
       this.push && `el-col-push-${this.push}`,
     ];
-    ['xs', 'sm', 'md', 'lg', 'xl'].forEach((item) => {
-      if (!this[item]) return;
-      if (typeof this[item] === 'number') {
-        result.push(`el-col-${item}-${this[item]}`);
-      } else {
-        Object.keys(this[item]).map(prop => {
-          result.push(`el-col-${this[item]}-${prop}-${this[item][prop]}`);
+    ['xs', 'sm', 'md', 'lg', 'xl'].forEach((size) => {
+      if (typeof this[size] === 'number') {
+        result.push(`el-col-${size}-${this[size]}`);
+      } else if (typeof this[size] === 'object') {
+        Object.keys(this[size]).map(prop => {
+          result.push(`el-col-${this[size]}-${prop}-${this[size][prop]}`);
         });
       }
     });

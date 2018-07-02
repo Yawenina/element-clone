@@ -3,7 +3,7 @@
     <h1>Button</h1>
     <div class="demo-block">
       <h3>基础用法</h3>
-      <div class="source">
+      <div class="demo-source">
         <el-row>
           <el-button>默认按钮</el-button>
           <el-button type="primary">主要按钮</el-button>
@@ -43,7 +43,7 @@
     </div>
     <div class="demo-block">
       <h3>禁用状态</h3>
-      <div class="source">
+      <div class="demo-source">
         <el-row>
           <el-button disabled>默认按钮</el-button>
           <el-button type="primary" disabled>主要按钮</el-button>
@@ -65,14 +65,14 @@
     </div>
     <div class="demo-block">
       <h3>文字按钮</h3>
-      <div class="source">
+      <div class="demo-source">
         <el-button type="text">文字按钮</el-button>
         <el-button type="text" disabled>文字按钮</el-button>
       </div>
     </div>
     <div class="demo-block">
       <h3>图标按钮</h3>
-      <div class="source">
+      <div class="demo-source">
         <el-button type="primary" icon="el-icon-edit"></el-button>
         <el-button type="primary" icon="el-icon-share"></el-button>
         <el-button type="primary" icon="el-icon-delete"></el-button>
@@ -82,7 +82,7 @@
     </div>
     <div class="demo-block">
       <h3>按钮组</h3>
-      <div class="source">
+      <div class="demo-source">
         <el-button-group>
           <el-button type="primary" icon="el-icon-arrow-left">上一页</el-button>
           <el-button type="primary">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
@@ -96,13 +96,13 @@
     </div>
     <div class="demo-block">
       <h3>加载中</h3>
-      <div class="source">
+      <div class="demo-source">
         <el-button type="primary" :loading="true">加载中</el-button>
       </div>
     </div>
     <div class="demo-block">
       <h3>不同尺寸</h3>
-      <div class="source">
+      <div class="demo-source">
         <el-row>
           <el-button>默认按钮</el-button>
           <el-button size="medium">中等按钮</el-button>

@@ -14,6 +14,10 @@ const routes = [
       component: (resolve) => require(['./components/icon.vue'], resolve)
     },
     {
+      path: '/input',
+      component: (resolve) => require(['./components/input.vue'], resolve)
+    },
+    {
       path: '/layout',
       component: (resolve) => require(['./components/layout.vue'], resolve)
     }];

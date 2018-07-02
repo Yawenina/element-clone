@@ -1,0 +1,1 @@
+export type inputSize = 'large' | 'small' | 'mini';

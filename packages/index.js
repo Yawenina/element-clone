@@ -30,12 +30,15 @@
   import Radio from './radio';
   
 
+  import RadioGroup from './radio-group';
+  
+
   import Row from './row';
   
 
 const version = '1.0.0';
 const components = [
-  Aside,Button,ButtonGroup,Col,Container,Footer,Header,Icon,Main,Radio,Row
+  Aside,Button,ButtonGroup,Col,Container,Footer,Header,Icon,Main,Radio,RadioGroup,Row
 ];
 const install = Vue => {
   components.forEach(Component => {
@@ -61,6 +64,7 @@ Header,
 Icon,
 Main,
 Radio,
+RadioGroup,
 Row
 }
 

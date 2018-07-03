@@ -3,11 +3,7 @@
     <h1>Button</h1>
     <div class="demo-block">
       <h3>基础用法</h3>
-<<<<<<< HEAD
-      <div class="source">
-=======
       <div class="demo-source">
->>>>>>> 8501798c552dfc8cd09dd3c95271eda4eacdb076
         <el-row>
           <el-button>默认按钮</el-button>
           <el-button type="primary">主要按钮</el-button>
@@ -47,11 +43,7 @@
     </div>
     <div class="demo-block">
       <h3>禁用状态</h3>
-<<<<<<< HEAD
-      <div class="source">
-=======
       <div class="demo-source">
->>>>>>> 8501798c552dfc8cd09dd3c95271eda4eacdb076
         <el-row>
           <el-button disabled>默认按钮</el-button>
           <el-button type="primary" disabled>主要按钮</el-button>

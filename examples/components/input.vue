@@ -15,6 +15,12 @@
       </div>
     </div>
     <div class="demo-block demo-input">
+      <h3>可清空</h3>
+      <div class="demo-source">
+        <el-input placeholder="请输入内容" v-model="input2" clearable></el-input>
+      </div>
+    </div>
+    <div class="demo-block demo-input">
       <h3>尺寸</h3>
       <div class="demo-source">
         <el-input
@@ -121,6 +127,7 @@
   export default class Home extends Vue {
     input: string = '';
     input1: string = '';
+    input2: string = '';
     input3: string = '';
     input31: string = '';
     input4: string = '';

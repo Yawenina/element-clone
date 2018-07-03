@@ -14,20 +14,16 @@ const routes = [
       component: (resolve) => require(['./components/icon.vue'], resolve)
     },
     {
-      path: '/layout',
-      component: (resolve) => require(['./components/layout.vue'], resolve)
-    },
-    {
-      path: '/radio',
-      component: (resolve) => require(['./components/radio.vue'], resolve)
-    },
-    {
       path: '/input',
       component: (resolve) => require(['./components/input.vue'], resolve)
     },
     {
       path: '/layout',
       component: (resolve) => require(['./components/layout.vue'], resolve)
+    },
+    {
+      path: '/radio',
+      component: (resolve) => require(['./components/radio.vue'], resolve)
     }];
 
 export default new VueRouter({

@@ -89,9 +89,6 @@
     onChange(): void {
       // this.$emit('input', this.model);
     }
-    get isDisabled() {
-      return this.disabled;
-    }
   }
 </script>
 

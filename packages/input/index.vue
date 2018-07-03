@@ -25,6 +25,9 @@
           :placeholder="placeholder"
           v-model="model"
           :disabled="disabled"
+          @focus="showClearable = true"
+          @mouseenter="showClearable = true"
+          @blur="showClearable = false"
       />
       <span
           v-if="hasPrefix"
@@ -39,6 +42,13 @@
       >
         <i :class="suffixIcon" v-if="suffixIcon"></i>
         <slot name="suffix"></slot>
+      </span>
+      <span
+          class="el-input__suffix el-input__icon el-input__clear"
+          v-if="model && showClearable"
+          @click="clearInput"
+      >
+        <i class="el-icon-circle-close" @click="clearInput"></i>
       </span>
       <div class="el-input-group__append" v-if="$slots.append">
         <slot name="append"></slot>
@@ -60,19 +70,23 @@
     @Prop()
     placeholder?: string;
     @Prop({ default: false })
-    disabled: boolean;
+    disabled?: boolean;
+    @Prop({ default: false })
+    clearable?: boolean;
     @Prop()
-    suffixIcon: string;
+    suffixIcon?: string;
     @Prop()
-    prefixIcon: string;
+    prefixIcon?: string;
     @Prop()
-    size: inputSize;
+    size?: inputSize;
     @Prop()
-    type: string;
+    type?: string;
     @Prop()
-    rows: number;
+    rows?: number;
     @Prop()
-    value: string;
+    value?: string;
+
+    showClearable: boolean = true;
 
     get model() {
       return this.value;
@@ -93,6 +107,11 @@
 
     get isTextarea() {
       return this.type === 'textarea';
+    }
+
+    clearInput() {
+      console.log('clear')
+      this.model = '';
     }
   }
 </script>

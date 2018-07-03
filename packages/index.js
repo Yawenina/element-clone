@@ -24,6 +24,9 @@
   import Icon from './icon';
   
 
+  import Input from './input';
+  
+
   import Main from './main';
   
 
@@ -38,7 +41,7 @@
 
 const version = '1.0.0';
 const components = [
-  Aside,Button,ButtonGroup,Col,Container,Footer,Header,Icon,Main,Radio,RadioGroup,Row
+  Aside,Button,ButtonGroup,Col,Container,Footer,Header,Icon,Input,Main,Radio,RadioGroup,Row
 ];
 const install = Vue => {
   components.forEach(Component => {
@@ -62,6 +65,7 @@ Container,
 Footer,
 Header,
 Icon,
+Input,
 Main,
 Radio,
 RadioGroup,

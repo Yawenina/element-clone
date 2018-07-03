@@ -46,9 +46,7 @@
     mixins: [Emmiter],
   })
   export default class ElRadio extends Vue {
-    @Prop({ type: [String, Number, Boolean] })
-    value?: string | number | boolean;
-    @Prop({ type: [String, Number, Boolean] })
+    @Prop({ type: String | Number | Boolean })
     label?: string | number | boolean;
     @Prop({ type: Boolean })
     disabled?: boolean;
@@ -90,6 +88,9 @@
 
     onChange(): void {
       // this.$emit('input', this.model);
+    }
+    get isDisabled() {
+      return this.disabled;
     }
   }
 </script>

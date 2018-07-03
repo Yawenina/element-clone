@@ -21,6 +21,7 @@ const routes = [
       path: '/radio',
       component: (resolve) => require(['./components/radio.vue'], resolve)
     }];
+
 export default new VueRouter({
   routes
 });

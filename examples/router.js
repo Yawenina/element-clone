@@ -16,6 +16,10 @@ const routes = [
     {
       path: '/layout',
       component: (resolve) => require(['./components/layout.vue'], resolve)
+    },
+    {
+      path: '/radio',
+      component: (resolve) => require(['./components/radio.vue'], resolve)
     }];
 export default new VueRouter({
   routes

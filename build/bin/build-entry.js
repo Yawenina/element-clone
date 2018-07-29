@@ -11,18 +11,21 @@ function buildElementEntry() {
   import ${uppercamelcase(name)} from './${name}';
   `);
   const exportList = Components.map(name => uppercamelcase(name));
-
+  const notElements = ['Loading'];
   const content = `${tips}
 ${importList.join('\n')}
 
 const version = '${version}';
 const components = [
-  ${exportList.join(',')}
+  ${exportList.filter(item => !notElements.includes(item.name)).join(',')}
 ];
 const install = Vue => {
   components.forEach(Component => {
+    if (!Component.name) return;
     Vue.component(Component.name, Component);
-  })
+  });
+  Vue.directive('loading', Loading.directive);
+  Vue.prototype.$notify = Notification;
 };
 
 // 确保是浏览器环境且引入了Vue
@@ -38,7 +41,8 @@ export {
 
 export default {
   install,
-  version
+  version,
+  Loading
 }
   `
 

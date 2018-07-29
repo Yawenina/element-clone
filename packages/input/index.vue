@@ -110,7 +110,6 @@
     }
 
     clearInput() {
-      console.log('clear')
       this.model = '';
     }
   }

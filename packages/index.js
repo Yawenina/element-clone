@@ -1,5 +1,8 @@
 // This file is auto gererated by build/bin/build-entry.js
 
+  import Alert from './alert';
+  
+
   import Aside from './aside';
   
 
@@ -27,7 +30,13 @@
   import Input from './input';
   
 
+  import Loading from './loading';
+  
+
   import Main from './main';
+  
+
+  import Notification from './notification';
   
 
   import Radio from './radio';
@@ -41,12 +50,15 @@
 
 const version = '1.0.0';
 const components = [
-  Aside,Button,ButtonGroup,Col,Container,Footer,Header,Icon,Input,Main,Radio,RadioGroup,Row
+  Alert,Aside,Button,ButtonGroup,Col,Container,Footer,Header,Icon,Input,Loading,Main,Notification,Radio,RadioGroup,Row
 ];
 const install = Vue => {
   components.forEach(Component => {
+    if (!Component.name) return;
     Vue.component(Component.name, Component);
-  })
+  });
+  Vue.directive('loading', Loading.directive);
+  Vue.prototype.$notify = Notification;
 };
 
 // 确保是浏览器环境且引入了Vue
@@ -57,7 +69,8 @@ if (typeof window !== undefined && window.Vue) {
 export {
   install,
   version,
-  Aside,
+  Alert,
+Aside,
 Button,
 ButtonGroup,
 Col,
@@ -66,7 +79,9 @@ Footer,
 Header,
 Icon,
 Input,
+Loading,
 Main,
+Notification,
 Radio,
 RadioGroup,
 Row
@@ -74,6 +89,7 @@ Row
 
 export default {
   install,
-  version
+  version,
+  Loading
 }
   

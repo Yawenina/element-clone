@@ -10,6 +10,7 @@
           <li><router-link to="/input">Input</router-link></li>
           <li><router-link to="/radio">Radio</router-link></li>
           <li><router-link to="/checkbox">Checkbox</router-link></li>
+          <li><router-link to="/notification">Notification</router-link></li>
           <li><router-link to="/steps">Steps</router-link></li>
           <li><router-link to="/timeline">Timeline</router-link></li>
           <li><router-link to="/switch">Switch</router-link></li>
@@ -41,6 +42,7 @@
           <li><router-link to="/date">Date</router-link></li>
           <li><router-link to="/form">Form</router-link></li>
           <li><router-link to="/table">Table</router-link></li>
+          <li><router-link to="/loading">Loading</router-link></li>
           <li><router-link to="/loading-bar">LoadingBar</router-link></li>
           <li><router-link to="/modal">Modal</router-link></li>
           <li><router-link to="/message">Message</router-link></li>
@@ -81,6 +83,8 @@
     display: flex;
     &__aside {
       width: 250px;
+      height: 100vh;
+      overflow: scroll;
       background: #F5F7FB;
       ul {
         padding: 0 15px;

@@ -1,5 +1,11 @@
 <template>
-  <button :class="classes" :disabled="disabled" :autofocus="autofocus" :type="nativeType">
+  <button
+    :class="classes"
+    :disabled="disabled"
+    :autofocus="autofocus"
+    :type="nativeType"
+    @click="handleClick"
+  >
     <i v-if="loading" class="el-icon-loading"></i>
     <i v-if="icon && !loading" :class="icon"></i>
     <span v-if="$slots.default">
@@ -52,6 +58,10 @@ export default class ElButton extends Vue {
       this.loading && `is-loading`,
       this.disabled && `is-disabled`,
     ]
+  }
+
+  handleClick(): void {
+    this.$emit('click');
   }
 }
 </script>

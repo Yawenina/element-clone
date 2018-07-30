@@ -1,49 +1,39 @@
 import Vue from 'vue';
-import baseClass from './Notification';
+import { isVNode } from '../../../src/utils/vdom';
+import Main from './main';
 
-const NotificationCtor = Vue.extend(baseClass);
+const NotificationConstructor = Vue.extend(Main);
 
-function createInstance(options) {
-  const instance = new NotificationCtor({
-    el: document.createElement('div'),
+function Notification(options) {
+  options = options || {};
+  const instance = new NotificationConstructor({
     data: options
   });
-  instance.item = instance;
+
+  if (isVNode(options.message)) {
+    instance.slots.default = [options.message];
+    options.message = 'REPLACED_BY_VNODE';
+  }
+
+  instance.$mount();
   document.body.appendChild(instance.$el);
+
+  instance.visible = true;
+
   return instance;
 }
 
-function Notification(options) {
-  createInstance(options);
-}
-
-Notification.prototype = {
-  success(options) {
-    const finalOptions = Object.assign({
-      type: 'success'
-    }, options);
-    createInstance(finalOptions)
-  },
-  info(options) {
-    const finalOptions = Object.assign({
-      type: 'info'
-    }, options);
-    createInstance(finalOptions)
-  },
-  warn(options) {
-    const finalOptions = Object.assign({
-      type: 'warn'
-    }, options);
-    createInstance(finalOptions)
-  },
-  error(options) {
-    const finalOptions = Object.assign({
-      type: 'error'
-    }, options);
-    createInstance(finalOptions)
-  },
-};
-
-Notification.prototype.constructor = Notification;
+['success', 'info', 'warn', 'error'].forEach(type => {
+  Notification[type] = options => {
+    // 非对象则视为message
+    if (typeof options === 'string' || isVNode(options)) {
+      options = {
+        message: options
+      }
+    }
+    options.type = type;
+    return Notification(options);
+  }
+});
 
 export default Notification;

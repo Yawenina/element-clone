@@ -126,8 +126,8 @@
     methods: {
       open1() {
         this.$notify({
-          title: '提示',
-          message: '这是一条不会自动关闭的消息',
+          title: '普通',
+          message: '这是一条普通的消息',
         })
       },
       open2() {

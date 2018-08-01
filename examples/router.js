@@ -36,10 +36,6 @@ const routes = [
     {
       path: '/notification',
       component: (resolve) => require(['./components/notification.vue'], resolve)
-    },
-    {
-      path: '/radio',
-      component: (resolve) => require(['./components/radio.vue'], resolve)
     }];
 
 export default new VueRouter({

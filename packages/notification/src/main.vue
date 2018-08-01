@@ -58,16 +58,21 @@ export default {
     horizonClass() {
       return this.position.includes('right') ? 'right' : 'left';
     },
+    verticalProperty() {
+      return /^top-/.test(this.position) ? 'top' : 'bottom';
+    },
     positionStyle() {
-      const verticalProperty =  /^top-/.test(this.position) ? 'top' : 'bottom';
       return {
-        [verticalProperty]: `${this.verticalOffset}px`
+        [this.verticalProperty]: `${this.verticalOffset}px`
       }
     }
   },
 
   methods: {
     close() {
+      if (this.onClose) {
+        this.onClose();
+      }
       this.visible = false;
       document.body.removeChild(this.$el);
       this.$destroy();

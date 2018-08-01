@@ -39,18 +39,12 @@
   import Notification from './notification';
   
 
-  import Radio from './radio';
-  
-
-  import RadioGroup from './radio-group';
-  
-
   import Row from './row';
   
 
 const version = '1.0.0';
 const components = [
-  Alert,Aside,Button,ButtonGroup,Col,Container,Footer,Header,Icon,Input,Loading,Main,Notification,Radio,RadioGroup,Row
+  Alert,Aside,Button,ButtonGroup,Col,Container,Footer,Header,Icon,Input,Loading,Main,Notification,Row
 ];
 const install = Vue => {
   components.forEach(Component => {
@@ -82,8 +76,6 @@ Input,
 Loading,
 Main,
 Notification,
-Radio,
-RadioGroup,
 Row
 }
 

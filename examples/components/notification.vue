@@ -16,8 +16,8 @@
           <el-button plain @click="open6">自动关闭</el-button>
           <el-button type="primary" plain @click="open7">不会自动关闭</el-button>
           <el-button type="success" plain @click="open8">自定义图标</el-button>
-          <el-button type="info" plain>信息按钮</el-button>
-          <el-button type="warning" plain>警告按钮</el-button>
+          <el-button type="warning" plain @click="open9">VNode Message</el-button>
+          <el-button type="info" plain @click="closeAll">移除所有</el-button>
           <el-button type="danger" plain>危险按钮</el-button>
         </el-row>
 
@@ -141,7 +141,7 @@
         this.$notify({
           title: '警告',
           message: '这是一条警告的提示消息',
-          type: 'warning'
+          type: 'warn'
         });
       },
       open4() {
@@ -176,6 +176,16 @@
           iconClass: 'el-icon-date'
         });
       },
+      open9() {
+        const h = this.$createElement;
+        this.$notify({
+          title: '标题名称',
+          message: h('i', { style: 'color: teal'}, '这是提示文案这是提示文案这是提示文案这是提示文案这是提示文案这是提示文案这是提示文案这是提示文案')
+        });
+      },
+      closeAll() {
+        this.$notify.closeAll();
+      }
     },
   }
 </script>

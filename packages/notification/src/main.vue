@@ -18,7 +18,10 @@
           <p v-if="!dangerouslyUseHTMLString">{{ message }}</p>
           <p v-else v-html="message"></p>
         </slot>
-        <div class="el-notification__closeBtn el-icon-close"></div>
+        <div
+          class="el-notification__closeBtn el-icon-close"
+          @click="close"
+        ></div>
       </div>
     </div>
   </transition>
@@ -67,10 +70,14 @@ export default {
     close() {
       this.visible = false;
       document.body.removeChild(this.$el);
+      this.$destroy();
+      if (this.timer) {
+        clearTimeout(this.timer);
+      }
     },
     startTimer() {
       if (this.duration > 0) {
-        setTimeout(() => {
+        this.timer = setTimeout(() => {
           this.close()
         }, this.duration)
       }

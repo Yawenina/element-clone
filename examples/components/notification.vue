@@ -13,9 +13,9 @@
         </el-row>
 
         <el-row>
-          <el-button plain>朴素按钮</el-button>
-          <el-button type="primary" plain>主要按钮</el-button>
-          <el-button type="success" plain>成功按钮</el-button>
+          <el-button plain @click="open6">自动关闭</el-button>
+          <el-button type="primary" plain @click="open7">不会自动关闭</el-button>
+          <el-button type="success" plain @click="open8">自定义图标</el-button>
           <el-button type="info" plain>信息按钮</el-button>
           <el-button type="warning" plain>警告按钮</el-button>
           <el-button type="danger" plain>危险按钮</el-button>
@@ -155,7 +155,27 @@
           title: '错误',
           message: '这是一条错误的提示消息'
         });
-      }
+      },
+      open6() {
+        this.$notify({
+          title: '提示',
+          message: '这是一条会自动关闭的消息',
+        });
+      },
+      open7() {
+        this.$notify({
+          title: '提示',
+          message: '这是一条不会自动关闭的消息',
+          duration: 0
+        });
+      },
+      open8() {
+        this.$notify({
+          title: '提示',
+          message: '这是一条自带图标的消息',
+          iconClass: 'el-icon-date'
+        });
+      },
     },
   }
 </script>

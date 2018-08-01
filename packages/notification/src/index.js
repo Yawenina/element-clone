@@ -3,9 +3,12 @@ import { isVNode } from '../../../src/utils/vdom';
 import Main from './main';
 
 const NotificationConstructor = Vue.extend(Main);
+let instances = [];
 
 function Notification(options) {
   options = options || {};
+  const position = options.position || 'top-right';
+
   const instance = new NotificationConstructor({
     data: options
   });
@@ -20,6 +23,15 @@ function Notification(options) {
 
   instance.visible = true;
 
+  // compute instance vertical offset
+  let verticalOffset = options.offset || 0;
+  instances.filter(item => item.position === position).forEach(item => {
+    verticalOffset += item.$el.offsetHeight + 16;
+  });
+  verticalOffset += 16;
+  instance.verticalOffset = verticalOffset;
+
+  instances.push(instance);
   return instance;
 }
 
